@@ -30,7 +30,7 @@ import lcx.viewstudy.R;
 public class RoundImageView extends ImageView
 {
 	/**
-	 * 图片的类型，圆形or圆角
+	 * 图片的类型，圆形or圆角 111111111
 	 */
 	private int type;
 	public static final int TYPE_CIRCLE = 0;
