@@ -5,7 +5,6 @@ package lcx.viewstudy.Rowview;
  */
 
 public class BaseRowType {
-    //11111111sss
     public RowAction mRowAction;
     public String title;
 

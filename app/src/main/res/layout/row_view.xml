@@ -20,7 +20,6 @@
         android:layout_height="wrap_content"/>
     <ImageButton
                  android:id="@+id/arrow"
-
                  android:src="@drawable/jiantou"
                  android:layout_gravity="right|center"
                  android:layout_width="15dp"

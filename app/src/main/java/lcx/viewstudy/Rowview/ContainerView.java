@@ -12,10 +12,10 @@ import java.util.ArrayList;
  */
 
 public class ContainerView extends LinearLayout {
-   private ArrayList<GroupType> mGroupTypes;
+   private ArrayList<BaseGroupType> mGroupTypes;
     private Context mcontext;
     private OnRowCilickListener onRowCilickListener;
-    private GroupView groupView=null;
+    private BaseGroupView groupView=null;
     public ContainerView(Context context) {
         super(context);
         Init(context);
@@ -34,7 +34,7 @@ public class ContainerView extends LinearLayout {
         this.mcontext=context;
         setOrientation(VERTICAL);
     }
-    public void InitData(ArrayList<GroupType> mGroupTypes, OnRowCilickListener onRowCilickListener){
+    public void InitData(ArrayList<BaseGroupType> mGroupTypes, OnRowCilickListener onRowCilickListener){
        this.mGroupTypes=mGroupTypes;
         this.onRowCilickListener=onRowCilickListener;
     }
@@ -44,7 +44,7 @@ public class ContainerView extends LinearLayout {
              LayoutParams layoutParams=new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
              layoutParams.topMargin=(int)(10*density);
              for (int i=0;i<mGroupTypes.size();i++){
-                 groupView=new GroupView(mcontext);
+                 groupView=GroupViewFactory.createGroupView(mGroupTypes.get(i),mcontext);
                  groupView.InitData(mGroupTypes.get(i),onRowCilickListener);
                  groupView.NotifyChangeData();
                  if (i!=0){

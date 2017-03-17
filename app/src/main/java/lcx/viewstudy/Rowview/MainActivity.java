@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements OnRowCilickListen
         ArrayList<BaseRowType> mlist2=new ArrayList<>();
         ArrayList<BaseRowType> mlist3=new ArrayList<>();
         ArrayList<BaseRowType> mlist4=new ArrayList<>();
-        ArrayList<GroupType> groupTypes=new ArrayList<>();
+        ArrayList<BaseGroupType> groupTypes=new ArrayList<>();
         mlist.add(new ProfileRowType(R.drawable.touxiang,"李晨希", RowAction.PROFILE));
         GroupType grouptype=new GroupType(mlist);
         groupTypes.add(grouptype);
@@ -38,10 +38,12 @@ public class MainActivity extends AppCompatActivity implements OnRowCilickListen
         groupTypes.add(grouptype2);
         mlist3.add(new NormalRowType(R.drawable.user_info,"我的保单", RowAction.My_SEETING));
         mlist3.add(new NormalRowType(R.drawable.user_update,"我要啪啪",RowAction.My_HAND));
-        GroupType grouptype3=new GroupType(mlist3);
+        mlist3.add(new NormalRowType(R.drawable.user_info,"我的保单", RowAction.My_SEETING));
+        mlist3.add(new NormalRowType(R.drawable.user_update,"我要啪啪",RowAction.My_HAND));
+        BaseGroupType grouptype3=new HeadGroupType(mlist3,"Head");
         groupTypes.add(grouptype3);
         mlist4.add(new NormalRowType(R.drawable.user_info,"关于我们", RowAction.My_SEETING));
-        GroupType grouptype4=new GroupType(mlist4);
+        BaseGroupType grouptype4=new GroupType(mlist4);
         groupTypes.add(grouptype4);
         containerView.InitData(groupTypes,this);
         containerView.NotifyChangeData();
